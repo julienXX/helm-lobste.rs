@@ -2,7 +2,7 @@
 
 ## Introduction
 
-`helm-lobste.rs.el` is an helm interface of [lobste.rs](https://lobste.rs/).
+`helm-lobste.rs.el` is an helm front-end for [lobste.rs](https://lobste.rs/).
 
 This is an adaptation of [helm-hackernews.el](https://github.com/syohex/emacs-helm-hackernews) by [Syohei YOSHIDA](https://github.com/syohex) for [lobste.rs](https://lobste.rs/).
 
@@ -17,8 +17,6 @@ This is an adaptation of [helm-hackernews.el](https://github.com/syohex/emacs-he
 * [helm](https://github.com/emacs-helm/helm) 1.0 or higher
 
 
-## Commands
+## Usage
 
-#### `helm-lobste.rs`
-
-Show posts with helm interface
+`m-x helm-lobste.rs RET` shows stories with helm.

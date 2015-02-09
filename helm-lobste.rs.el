@@ -1,10 +1,10 @@
-;;; helm-lobste.rs.el --- helm interface of lobste.rs.el
+;;; helm-lobste.rs.el --- helm front-end for lobste.rs
 
 ;; Copyright (C) 2015 by Julien Blanchard
 
 ;; Author: Julien BLANCHARD <julien@sideburns.eu>
-;; URL: https://github.com/julienXX/emacs-helm-lobste.rs
-;; Version: 0.01
+;; URL: https://github.com/julienXX/helm-lobste.rs
+;; Version: 0.10
 ;; Package-Requires: ((helm "1.0") (cl-lib "0.5"))
 
 ;; This program is free software; you can redistribute it and/or modify
