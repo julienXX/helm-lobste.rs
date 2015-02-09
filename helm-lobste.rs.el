@@ -90,7 +90,7 @@
   '((name . "Lobste.rs")
     (candidates . helm-lobste.rs-init)
     (action . (("Browse Link" . helm-lobste.rs-browse-link)
-               ("Browse Post Page"  . helm-lobste.rs-browse-post-page)))
+               ("Browse Story Page"  . helm-lobste.rs-browse-post-page)))
     (candidate-number-limit . 9999)))
 
 ;;;###autoload
