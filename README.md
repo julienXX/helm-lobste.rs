@@ -1,14 +1,14 @@
-# helm-lobste.rs.el
+# helm-lobsters.el
 
 ## Introduction
 
-`helm-lobste.rs.el` is an helm front-end for [lobste.rs](https://lobste.rs/).
+`helm-lobsters.el` is an helm front-end for [lobste.rs](https://lobste.rs/).
 
 This is an adaptation of [helm-hackernews.el](https://github.com/syohex/emacs-helm-hackernews) by [Syohei YOSHIDA](https://github.com/syohex) for [lobste.rs](https://lobste.rs/).
 
 ## Screenshot
 
-![helm-lobste.rs.png](https://s3.amazonaws.com/f.cl.ly/items/3f3y284216341p0d1W0q/Screen%20Shot%202015-02-09%20at%2015.25.58.png)
+![helm-lobsters.png](https://s3.amazonaws.com/f.cl.ly/items/3f3y284216341p0d1W0q/Screen%20Shot%202015-02-09%20at%2015.25.58.png)
 
 
 ## Requirements
@@ -19,4 +19,4 @@ This is an adaptation of [helm-hackernews.el](https://github.com/syohex/emacs-he
 
 ## Usage
 
-`m-x helm-lobste.rs RET` shows stories with helm.
+`m-x helm-lobsters RET` shows stories with helm.

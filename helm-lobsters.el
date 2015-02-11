@@ -1,9 +1,9 @@
-;;; helm-lobste.rs.el --- helm front-end for lobste.rs
+;;; helm-lobsters.el --- helm front-end for lobste.rs
 
 ;; Copyright (C) 2015 by Julien Blanchard
 
 ;; Author: Julien BLANCHARD <julien@sideburns.eu>
-;; URL: https://github.com/julienXX/helm-lobste.rs
+;; URL: https://github.com/julienXX/helm-lobsters
 ;; Version: 0.10
 ;; Package-Requires: ((helm "1.0") (cl-lib "0.5"))
 
@@ -30,24 +30,24 @@
 (require 'json)
 (require 'browse-url)
 
-(defgroup helm-lobste.rs nil
+(defgroup helm-lobsters nil
   "hacker news with helm interface"
   :group 'lobste.rs)
 
-(defface helm-lobste.rs-title
+(defface helm-lobsters-title
   '((((class color) (background light))
      :foreground "red" :weight semi-bold)
     (((class color) (background dark))
      :foreground "green" :weight semi-bold))
   "face of post title"
-  :group 'helm-lobste.rs)
+  :group 'helm-lobsters)
 
-(defvar helm-lobste.rs-url "https://lobste.rs/newest.json")
+(defvar helm-lobsters-url "https://lobste.rs/newest.json")
 
-(defun helm-lobste.rs-get-posts ()
+(defun helm-lobsters-get-posts ()
   (with-temp-buffer
-    (unless (zerop (call-process "curl" nil t nil "-s" helm-lobste.rs-url))
-      (error "Failed: 'curl -s %s'" helm-lobste.rs-url))
+    (unless (zerop (call-process "curl" nil t nil "-s" helm-lobsters-url))
+      (error "Failed: 'curl -s %s'" helm-lobsters-url))
     (let* ((json nil)
            (ret (ignore-errors
                   (setq json (json-read-from-string
@@ -58,13 +58,13 @@
         (error "Error: Can't get JSON response"))
       json)))
 
-(defun helm-lobste.rs-sort-predicate (a b)
+(defun helm-lobsters-sort-predicate (a b)
   (let ((score-a (plist-get (cdr a) :score))
         (score-b (plist-get (cdr b) :score)))
     (> score-a score-b)))
 
-(defun helm-lobste.rs-init ()
-  (let ((stories (helm-lobste.rs-get-posts)))
+(defun helm-lobsters-init ()
+  (let ((stories (helm-lobsters-get-posts)))
     (sort (cl-loop for story across stories
                    for score = (assoc-default 'score story)
                    for title = (assoc-default 'title story)
@@ -73,31 +73,31 @@
                    for comments-url = (assoc-default 'comments_url story)
                    for cand = (format "%s %s (%d comments)"
                                       (format "[%d]" score)
-                                      (propertize title 'face 'helm-lobste.rs-title)
+                                      (propertize title 'face 'helm-lobsters-title)
                                       comments)
                    collect
                    (cons cand
                          (list :url url :score score :comments-url comments-url)))
-          'helm-lobste.rs-sort-predicate)))
+          'helm-lobsters-sort-predicate)))
 
-(defun helm-lobste.rs-browse-link (cand)
+(defun helm-lobsters-browse-link (cand)
   (browse-url (plist-get cand :url)))
 
-(defun helm-lobste.rs-browse-post-page (cast)
+(defun helm-lobsters-browse-post-page (cast)
   (browse-url (plist-get cast :comments-url)))
 
-(defvar helm-lobste.rs-source
+(defvar helm-lobsters-source
   '((name . "Lobste.rs")
-    (candidates . helm-lobste.rs-init)
-    (action . (("Browse Link" . helm-lobste.rs-browse-link)
-               ("Browse Story Page"  . helm-lobste.rs-browse-post-page)))
+    (candidates . helm-lobsters-init)
+    (action . (("Browse Link" . helm-lobsters-browse-link)
+               ("Browse Story Page"  . helm-lobsters-browse-post-page)))
     (candidate-number-limit . 9999)))
 
 ;;;###autoload
-(defun helm-lobste.rs ()
+(defun helm-lobsters ()
   (interactive)
-  (helm :sources '(helm-lobste.rs-source) :buffer "*helm-lobste.rs*"))
+  (helm :sources '(helm-lobsters-source) :buffer "*helm-lobsters*"))
 
-(provide 'helm-lobste.rs)
+(provide 'helm-lobsters)
 
-;;; helm-lobste.rs.el ends here
+;;; helm-lobsters.el ends here
