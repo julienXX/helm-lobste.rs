@@ -3,7 +3,7 @@
 ;; Copyright (C) 2015 by Julien Blanchard
 
 ;; Author: Julien BLANCHARD <julien@sideburns.eu>
-;; URL: https://github.com/julienXX/helm-lobsters
+;; URL: https://github.com/julienXX/helm-lobste.rs
 ;; Version: 0.10
 ;; Package-Requires: ((helm "1.0") (cl-lib "0.5"))
 
