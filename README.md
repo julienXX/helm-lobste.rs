@@ -1,5 +1,8 @@
 # helm-lobsters.el
 
+[![MELPA](http://melpa.org/packages/helm-lobsters-badge.svg)](http://melpa.org/#/helm-lobsters)
+
+
 ## Introduction
 
 `helm-lobsters.el` is an helm front-end for [lobste.rs](https://lobste.rs/).
