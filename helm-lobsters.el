@@ -31,7 +31,7 @@
 (require 'browse-url)
 
 (defgroup helm-lobsters nil
-  "hacker news with helm interface"
+  "lobste.rs with helm interface"
   :group 'lobste.rs)
 
 (defface helm-lobsters-title
