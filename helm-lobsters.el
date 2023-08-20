@@ -1,10 +1,10 @@
 ;;; helm-lobsters.el --- helm front-end for lobste.rs
 
-;; Copyright (C) 2015 by Julien Blanchard
+;; Copyright (C) 2023 by Julien Blanchard
 
 ;; Author: Julien BLANCHARD <julien@sideburns.eu>
 ;; URL: https://github.com/julienXX/helm-lobste.rs
-;; Version: 0.10
+;; Version: 0.8.0
 ;; Package-Requires: ((helm "1.0") (cl-lib "0.5"))
 
 ;; This program is free software; you can redistribute it and/or modify
